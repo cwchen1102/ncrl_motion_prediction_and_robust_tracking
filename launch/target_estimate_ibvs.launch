@@ -1,0 +1,63 @@
+<launch>
+   <node pkg="ukf_estimate" name="target_estimate_ibvs" type="target_estimate_ibvs" output="screen" >
+
+     <param name="topic_box" value="/YOLO/box" />
+
+<!--PID in global frame-->
+	 <!--param name="KPx_ibvs" value="0.0004" />
+     <param name="KPy_ibvs" value="0.0004" />
+     <param name="KPz_ibvs" value="0.0006" />
+	 <param name="KProll_ibvs" value="1.2" />
+     <param name="Tix_ibvs" value="10" />
+     <param name="Tiy_ibvs" value="10" />
+	 <param name="Tiz_ibvs" value="10000" />
+     <param name="Tiroll_ibvs" value="5" />
+     <param name="Tdx_ibvs" value="0.1" />
+     <param name="Tdy_ibvs" value="0.1" />
+	 <param name="Tdz_ibvs" value="0.0" />
+     <param name="Tdroll_ibvs" value="0.8" /-->
+<!--PID in camera frame-->
+	 <param name="KPx_ibvs" value="0.9" />
+     <param name="KPy_ibvs" value="0.4" />		<!--pseudo inverse of Le=3x6, Kpy_ibvs=3.0-->
+     <param name="KPz_ibvs" value="0.9" />
+	 <param name="KProll_ibvs" value="1.2" />
+	 <param name="Tix_ibvs" value="10000" />
+     <param name="Tiy_ibvs" value="10000" />
+	 <param name="Tiz_ibvs" value="10000" />
+     <param name="Tiroll_ibvs" value="5" />
+     <param name="Tdx_ibvs" value="0" />
+     <param name="Tdy_ibvs" value="0" />
+	 <param name="Tdz_ibvs" value="0" />
+     <param name="Tdroll_ibvs" value="0.8" />
+
+
+     <param name="P_init_0" value="0.1" />
+     <param name="P_init_1" value="0.1" />
+     <param name="P_init_2" value="0.1" />
+	 <param name="P_init_3" value="800" />
+     <param name="P_init_4" value="800" />
+     <param name="P_init_5" value="800" />
+	 <param name="P_init_6" value="0.1" />
+     <param name="P_init_7" value="0.1" />
+     <param name="P_init_8" value="0.1" />
+
+	 <param name="measurement_noise_0" value="20" />
+     <param name="measurement_noise_1" value="20" />
+     <param name="measurement_noise_2" value="0.5" />
+	 <param name="measurement_noise_3" value="0.0001" />
+     <param name="measurement_noise_4" value="0.0001" />
+     <param name="measurement_noise_5" value="0.0001" />
+
+	 <param name="process_noise_0" value="0.0008" />
+     <param name="process_noise_1" value="0.0008" />
+     <param name="process_noise_2" value="0.0005" />
+	 <param name="process_noise_3" value="0.05" />
+     <param name="process_noise_4" value="0.05" />
+     <param name="process_noise_5" value="0.05" />
+	 <param name="process_noise_6" value="0.5" />
+     <param name="process_noise_7" value="0.5" />
+     <param name="process_noise_8" value="0.5" />
+
+   </node>
+
+</launch>
